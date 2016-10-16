@@ -99,7 +99,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
       text: 'Slapp is a robust open source library that sits on top of the Slack APIs',
       title: 'Slapp Library - Open Source',
       image_url: 'https://storage.googleapis.com/beepboophq/_assets/bot-1.22f6fb.png',
-      title_link: 'https://beepboophq.com/',
+      title_link: 'https://devoffuture.slack.com/files/sdmg15/F2HVBAZJR/Guide_of_new_user',
       color: '#7CD197'
     }]
   })
@@ -113,7 +113,7 @@ slapp.match((msg) => {
   isChannel('general', msg, (err, yes) => {
     if (err) return console.log('Error looking for general channel', err)
     if (yes) {
-      msg.say(`Welcome to the team <@${msg.meta.user_id}>! Here is the guide to show you how to start. \n https://devoffuture.slack.com/files/sdmg15/F2HVBAZJR/Guide_of_new_user`)
+      msg.say(`Welcome to the team <@${msg.meta.user_id}>! Here is the guide to show you how to start. \nhttps://devoffuture.slack.com/files/sdmg15/F2HVBAZJR/Guide_of_new_user `)
     }
   })
   return true
