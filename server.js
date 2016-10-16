@@ -105,6 +105,54 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
   })
 })
 
+// listen for message and subtype channel_join
+slapp.match((msg) => {
+  if (!msg.isMessage() || msg.body.event.subtype !== 'channel_join') {
+    return false
+  }
+  isChannel('general', msg, (err, yes) => {
+    if (err) return console.log('Error looking for general channel', err)
+    if (yes) {
+      msg.say(`Welcome to the team <@${msg.meta.user_id}>!`)
+    }
+  })
+  return true
+})
+
+// cache channel name <--> channel Id
+// channelNameCache[name][teamID]
+var channelNameCache = {}
+
+// is the current message from the named channel
+function isChannel(name, msg, callback) {
+  let teamId = msg.meta.team_id
+  let channelId = msg.meta.channel_id
+  if (!channelNameCache[name]) channelNameCache[name] = {}
+
+  // check for the mapping in cache and if this is the named channel
+  if (channelId === channelNameCache[name][teamId]) {
+    return callback(null, true)
+  }
+
+  // the value is not cached, so fetch the list of teams
+  slapp.client.channels.list({ token: msg.meta.bot_token }, (err, result) => {
+    if (err) return callback(err)
+    result.channels.some((channel) => {
+      if (channel.name === name) {
+        channelNameCache[name][teamId] = channel.id
+        // short circuit some loop by returning true
+        return true
+      }
+    })
+
+    if (msg.meta.channel_id === channelNameCache[name][teamId]) {
+      return callback(null, true)
+    }
+    callback(null, false)
+  })
+}
+
+
 // Catch-all for any other responses not handled above
 slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
   // respond only 40% of the time
