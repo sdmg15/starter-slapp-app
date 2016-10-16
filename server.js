@@ -110,7 +110,7 @@ slapp.match((msg) => {
   if (!msg.isMessage() || msg.body.event.subtype !== 'channel_join') {
     return false
   }
-  isChannel('to_delete', msg, (err, yes) => {
+  isChannel('general', msg, (err, yes) => {
     if (err) return console.log('Error looking for general channel', err)
     if (yes) {
       msg.say(`Welcome to the team <@${msg.meta.user_id}>!`)
