@@ -113,7 +113,10 @@ slapp.match((msg) => {
   isChannel('general', msg, (err, yes) => {
     if (err) return console.log('Error looking for general channel', err)
     if (yes) {
-      msg.say(`Welcome to the team <@${msg.meta.user_id}>! Here is the guide to show you how to start. \nhttps://devoffuture.slack.com/files/sdmg15/F2HVBAZJR/Guide_of_new_user `)
+      msg.say({
+    text: 'Welcome <@${msg.meta.user_id}> to the team ! Here is a guide to help you start \n https://devoffuture.slack.com/files/sdmg15/F2G00CFM3/Guide_du_nouveau',
+     unfurl_links: true
+      })
     }
   })
   return true
