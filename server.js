@@ -114,7 +114,7 @@ slapp.match((msg) => {
     if (err) return console.log('Error looking for general channel', err)
     if (yes) {
       msg.say({
-    text: ` Happy new year <@${msg.meta.user_id}> and welcome to DOF :slightly_smiling_face: ! Here is a guide to help you start \nhttps://devoffuture.slack.com/files/sdmg15/F2HVBAZJR/Guide_of_new_user`,
+    text: ` :sparkles: <@${msg.meta.user_id}> welcome to DOF :slightly_smiling_face: ! Here is a guide to help you start \nhttps://devoffuture.slack.com/files/sdmg15/F2HVBAZJR/Guide_of_new_user`,
     unfurl_links: true,
     unfurl_media: true
         
