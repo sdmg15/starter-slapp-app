@@ -27,11 +27,13 @@ Send `@slappbot` a Direct Message of `help` to see what it can do.
 
 ![Help](https://cloud.githubusercontent.com/assets/367275/19364707/7a4f8964-914c-11e6-99cd-d4cd65c9061a.png)
 
-### Why is my Bot Offline?
+### how to set your bot to online ? 
 
-![Bot Offline](https://cloud.githubusercontent.com/assets/367275/19364857/3944ba24-914d-11e6-9939-a37ed07b954e.png)
+Formely it wasn't possible to set your bot to "online" easily but after some updates slack now allow it.
+To do so, you just have to go through [this link](https://api.slack.com/apps) ![desc](http://zupimages.net/up/17/09/imrl.png) 
+Then choose your app. After you'll get a link like this `https://api.slack.com/apps/XXDDEEZ/bots` Here's an illustration :
+![illustration](http://zupimages.net/up/17/09/sqce.png) You can now toggle on or toggle off your bot with the appropriate button :smile:
 
-Your bot will not show as "online", which is a current limitation of the [Slack Events API](slack-events-api) (no way to set presence). If you really want your bot to show online, [check out this work-around](presence-polyfill).
 
 [bb]: https://beepboophq.com
 [slapp]: https://github.com/BeepBoopHQ/slapp
