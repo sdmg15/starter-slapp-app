@@ -32,7 +32,7 @@ Send `@slappbot` a Direct Message of `help` to see what it can do.
 Formely it wasn't possible to set your bot to "online" easily but after some updates slack now allow it.
 To do so, you just have to go through [this link](https://api.slack.com/apps) ![desc](http://zupimages.net/up/17/09/imrl.png) 
 Then choose your app. After you'll get a link like this `https://api.slack.com/apps/XXDDEEZ/bots` Here's an illustration :
-![illustration](http://zupimages.net/up/17/09/sqce.png) You can now toggle on or toggle off your bot with the appropriate button :smile:
+![illustration](http://zupimages.net/up/17/09/sqce.png) You can now toggle or untoggle off your bot with the appropriate button :smile:
 
 
 [bb]: https://beepboophq.com
