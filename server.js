@@ -42,6 +42,11 @@ slapp
       // sends next event from user to this route, passing along state
       .route('how-are-you', { greeting: text })
   })
+  
+  .message('^(about)$',['direct_mention','direct_message', (msg, text) =>{
+                 msg
+                    .say(`Dev Of Future (DOF) is a community of awesome developers helping each other , building awesome projects and trying to make the world a better place :smile`);
+       }
   .route('how-are-you', (msg, state) => {
     var text = (msg.body.event && msg.body.event.text) || ''
 
