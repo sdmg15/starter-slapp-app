@@ -45,8 +45,13 @@ slapp
   
   .message('^(about)$',['direct_mention','direct_message', (msg, text) =>{
                  msg
-                    .say(`Dev Of Future (DOF) is a community of awesome developers helping each other , building awesome projects and trying to make the world a better place :smile`);
-       }
+                    .say(`Dev Of Future (DOF) is a community of awesome developers helping each other , building awesome projects and trying to make the world a better place :smile:`)
+                    .route('about', text);     
+  }
+  .route('about',(msg,state)=>{
+                        return msg
+                                 .say(`Dev Of Future (DOF) is a community of awesome developers helping each other , building awesome projects and trying to make the world a better place :smile:`)
+                        })
   .route('how-are-you', (msg, state) => {
     var text = (msg.body.event && msg.body.event.text) || ''
 
