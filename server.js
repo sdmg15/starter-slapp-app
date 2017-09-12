@@ -51,6 +51,19 @@ slapp
   .route('about',(msg,state)=>{
                    return msg.say(`Dev Of Future (DOF) is a community of awesome developers helping each other , building awesome projects and trying to make the world a better place :smile:`)
           })
+  .message('^(resources?)',['mention'],(msg,text) =>{
+            msg
+              .say(`Hurayy here's an awesome list of resources you can check https://github.com/sdmg15/Best-websites-a-programmer-should-visit
+                    :heart:`)
+              .route('resource',text)
+})
+
+.route('resource',(msg,state)=>{
+  return msg.say(`Hurayy here's an awesome list of resources you can check https://github.com/sdmg15/Best-websites-a-programmer-should-visit
+                    :heart:`)
+})
+        
+                       
                         
   .route('how-are-you', (msg, state) => {
     var text = (msg.body.event && msg.body.event.text) || ''
